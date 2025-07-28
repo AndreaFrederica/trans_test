@@ -25,7 +25,16 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/vc14_runtime-14.44.35208-h818238b_30.conda
       - pypi: https://files.pythonhosted.org/packages/cb/3b/d58c12eafcb298d4e6d0d40216866ab15f59e55d148a5658bb3132311fcf/numpy-2.2.6-cp313-cp313-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/fa/80/eb88edc2e2b11cd2dd2e56f1c80b5784d11d6e6b7f04a1145df64df40065/opencv_python-4.12.0.88-cp37-abi3-win_amd64.whl
+      - pypi: https://files.pythonhosted.org/packages/18/bb/b58be7df35d59fc72bba18efe345ce4451e970ca9f693309e47578578bda/panda3d-1.10.15-cp313-cp313-win_amd64.whl
+      - pypi: https://files.pythonhosted.org/packages/24/0f/b9406c4434422822039a4daefdc479e71326131f2a0f80f88f7cfc60e9c8/panda3d_gltf-1.3.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/11/5d/3744c6550dddf933785a37cdd4a9921fe13284e6d115b5a2637fe390f158/panda3d_simplepbr-0.13.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/23/85/397c73524e0cd212067e0c969aa245b01d50183439550d24d9f55781b776/pillow-11.3.0-cp313-cp313-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/7e/11/17f7f319ca91824b86557e9303e3b7a71991ef17fd45286bf47d7f0a38e6/pygame-2.6.1-cp313-cp313-win_amd64.whl
+      - pypi: https://files.pythonhosted.org/packages/30/23/2f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60d/pyperclip-1.9.0.tar.gz
+      - pypi: https://files.pythonhosted.org/packages/6e/bf/c5205d480307bef660e56544b9e3d7ff687da776abb30c9cb3f330887570/screeninfo-0.8.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/03/54/cda746af289bced80c69d30d31f378f36833164931646e373ec83f05c7d9/sswg-4.3.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/b5/00/d631e67a838026495268c2f6884f3711a15a9a2a96cd244fdaea53b823fb/typing_extensions-4.14.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/48/22/ff79ccdf31292000cbbe04bb2a1c408216d354901534baaaf12f75638109/ursina-8.0.1-py3-none-any.whl
 packages:
 - conda: https://conda.anaconda.org/conda-forge/win-64/bzip2-1.0.8-h2466b09_7.conda
   sha256: 35a5dad92e88fdd7fc405e864ec239486f4f31eec229e31686e61a140a8e573b
@@ -150,11 +159,68 @@ packages:
   purls: []
   size: 9327033
   timestamp: 1751392489008
+- pypi: https://files.pythonhosted.org/packages/18/bb/b58be7df35d59fc72bba18efe345ce4451e970ca9f693309e47578578bda/panda3d-1.10.15-cp313-cp313-win_amd64.whl
+  name: panda3d
+  version: 1.10.15
+  sha256: 81da0be19890802980828dde4c59f920f7e49bb9e6ec02375c899cace8074baf
+- pypi: https://files.pythonhosted.org/packages/24/0f/b9406c4434422822039a4daefdc479e71326131f2a0f80f88f7cfc60e9c8/panda3d_gltf-1.3.0-py3-none-any.whl
+  name: panda3d-gltf
+  version: 1.3.0
+  sha256: 2512500ee7e2fc13431dc47e9510efff2c29b9dd82714bd2c36165be2c82ef97
+  requires_dist:
+  - panda3d>=1.10.8
+  - panda3d-simplepbr>=0.6
+  - pytest ; extra == 'test'
+  - pylint~=3.1.0 ; extra == 'test'
+  - pytest-pylint ; extra == 'test'
+  requires_python: '>=3.8'
+- pypi: https://files.pythonhosted.org/packages/11/5d/3744c6550dddf933785a37cdd4a9921fe13284e6d115b5a2637fe390f158/panda3d_simplepbr-0.13.1-py3-none-any.whl
+  name: panda3d-simplepbr
+  version: 0.13.1
+  sha256: cda41cb57cff035b851646956cfbdcc408bee42511dabd4f2d7bd4fbf48c57a9
+  requires_dist:
+  - panda3d>=1.10.8
+  - typing-extensions~=4.7
+  requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/23/85/397c73524e0cd212067e0c969aa245b01d50183439550d24d9f55781b776/pillow-11.3.0-cp313-cp313-win_amd64.whl
+  name: pillow
+  version: 11.3.0
+  sha256: 0bce5c4fd0921f99d2e858dc4d4d64193407e1b99478bc5cacecba2311abde51
+  requires_dist:
+  - furo ; extra == 'docs'
+  - olefile ; extra == 'docs'
+  - sphinx>=8.2 ; extra == 'docs'
+  - sphinx-autobuild ; extra == 'docs'
+  - sphinx-copybutton ; extra == 'docs'
+  - sphinx-inline-tabs ; extra == 'docs'
+  - sphinxext-opengraph ; extra == 'docs'
+  - olefile ; extra == 'fpx'
+  - olefile ; extra == 'mic'
+  - pyarrow ; extra == 'test-arrow'
+  - check-manifest ; extra == 'tests'
+  - coverage>=7.4.2 ; extra == 'tests'
+  - defusedxml ; extra == 'tests'
+  - markdown2 ; extra == 'tests'
+  - olefile ; extra == 'tests'
+  - packaging ; extra == 'tests'
+  - pyroma ; extra == 'tests'
+  - pytest ; extra == 'tests'
+  - pytest-cov ; extra == 'tests'
+  - pytest-timeout ; extra == 'tests'
+  - pytest-xdist ; extra == 'tests'
+  - trove-classifiers>=2024.10.12 ; extra == 'tests'
+  - typing-extensions ; python_full_version < '3.10' and extra == 'typing'
+  - defusedxml ; extra == 'xmp'
+  requires_python: '>=3.9'
 - pypi: https://files.pythonhosted.org/packages/7e/11/17f7f319ca91824b86557e9303e3b7a71991ef17fd45286bf47d7f0a38e6/pygame-2.6.1-cp313-cp313-win_amd64.whl
   name: pygame
   version: 2.6.1
   sha256: 813af4fba5d0b2cb8e58f5d95f7910295c34067dcc290d34f1be59c48bd1ea6a
   requires_python: '>=3.6'
+- pypi: https://files.pythonhosted.org/packages/30/23/2f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60d/pyperclip-1.9.0.tar.gz
+  name: pyperclip
+  version: 1.9.0
+  sha256: b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310
 - conda: https://conda.anaconda.org/conda-forge/win-64/python-3.13.5-h7de537c_102_cp313.conda
   build_number: 102
   sha256: 3de2b9f89b220cb779f6947cf87b328f73d54eed4f7e75a3f9337caeb4443910
@@ -190,6 +256,20 @@ packages:
   purls: []
   size: 7002
   timestamp: 1752805902938
+- pypi: https://files.pythonhosted.org/packages/6e/bf/c5205d480307bef660e56544b9e3d7ff687da776abb30c9cb3f330887570/screeninfo-0.8.1-py3-none-any.whl
+  name: screeninfo
+  version: 0.8.1
+  sha256: e97d6b173856edcfa3bd282f81deb528188aff14b11ec3e195584e7641be733c
+  requires_dist:
+  - cython ; sys_platform == 'darwin'
+  - dataclasses ; python_full_version < '3.7'
+  - pyobjc-framework-cocoa ; sys_platform == 'darwin'
+  requires_python: '>=3.6.2,<4.0.0'
+- pypi: https://files.pythonhosted.org/packages/03/54/cda746af289bced80c69d30d31f378f36833164931646e373ec83f05c7d9/sswg-4.3.0-py3-none-any.whl
+  name: sswg
+  version: 4.3.0
+  sha256: c4d0e559ab7ffd37e36d9a072861e12d93d57ae66564b93b87bc239f0c8b6283
+  requires_python: '>=3.12'
 - conda: https://conda.anaconda.org/conda-forge/win-64/tk-8.6.13-h2c6b04d_2.conda
   sha256: e3614b0eb4abcc70d98eae159db59d9b4059ed743ef402081151a948dce95896
   md5: ebd0e761de9aa879a51d22cc721bd095
@@ -202,6 +282,11 @@ packages:
   purls: []
   size: 3466348
   timestamp: 1748388121356
+- pypi: https://files.pythonhosted.org/packages/b5/00/d631e67a838026495268c2f6884f3711a15a9a2a96cd244fdaea53b823fb/typing_extensions-4.14.1-py3-none-any.whl
+  name: typing-extensions
+  version: 4.14.1
+  sha256: d1e1e3b58374dc93031d6eda2420a48ea44a36c2b4766a4fdeb3710755731d76
+  requires_python: '>=3.9'
 - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
   sha256: 5aaa366385d716557e365f0a4e9c3fca43ba196872abbbe3d56bb610d131e192
   md5: 4222072737ccff51314b5ece9c7d6f5a
@@ -218,6 +303,23 @@ packages:
   purls: []
   size: 559710
   timestamp: 1728377334097
+- pypi: https://files.pythonhosted.org/packages/48/22/ff79ccdf31292000cbbe04bb2a1c408216d354901534baaaf12f75638109/ursina-8.0.1-py3-none-any.whl
+  name: ursina
+  version: 8.0.1
+  sha256: 8e33349dbfcd842d3165747c18426bddc61b70abf46945f5377362249f417fd2
+  requires_dist:
+  - panda3d>=1.10.15
+  - panda3d-gltf>=1.3.0
+  - pillow>=10.0.0
+  - pyperclip>=1.9.0
+  - screeninfo>=0.8.1
+  - sswg==4.3.0
+  - imageio>=2.37.0 ; extra == 'extra'
+  - numpy>=2.3.1 ; extra == 'extra'
+  - psutil>=7.0.0 ; extra == 'extra'
+  - thumbhash-python>=1.0.1 ; extra == 'extra'
+  - tripy>=1.0.0 ; extra == 'extra'
+  requires_python: '>=3.12'
 - conda: https://conda.anaconda.org/conda-forge/win-64/vc-14.3-h2b53caa_30.conda
   sha256: 8e16a8c3270d88735234a8097d45efea02b49751800c83b6fd5f2167a3828f52
   md5: 76b6febe6dea7991df4c86f826f396c5

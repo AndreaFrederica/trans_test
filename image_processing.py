@@ -1,3 +1,6 @@
+"""
+Module for contour extraction from images.
+"""
 import cv2
 
 def extract_contour_points(image_path: str) -> list[tuple[int,int]]:
