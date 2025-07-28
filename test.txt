@@ -1,0 +1,24 @@
+instruction = Text(
+    '|←/→ Pan | ↑/↓ Tilt | Enter 记录 | F 重置 |',
+    position=Vec2(0,-0.4), origin=(0,1), background=True, scale=1.2
+)
+pan_text = Text(
+    text=f'Pan: {pan:.1f}°',
+    position=Vec2(-0.65, 0.4), origin=(0,1), scale=1.1
+)
+til_text = Text(
+    text=f'Tilt: {tilt:.1f}°',
+    position=Vec2(-0.65, 0.3), origin=(0,1), scale=1.1
+)
+count_text = Text(
+    text=f'已记录: {len(calib_points)}/4',
+    position=Vec2(-0.65, 0.2), origin=(0,1), scale=1.1
+)
+# 滑块定义（屏幕底部）
+screen_x = Slider(min=-3, max=3, default=0, step=0.1, text='屏幕 X', y=0.4,x=0.2)
+screen_y = Slider(min=-3, max=3, default=0, step=0.1, text='屏幕 Y', y=0.3,x=0.2)
+screen_z = Slider(min=1, max=10, default=screen_distance, step=0.1, text='屏幕 Z', y=0.2,x=0.2)
+
+gimbal_x = Slider(min=-3, max=3, default=0, step=0.1, text='云台 X', y=0.1,x=0.2)
+gimbal_y = Slider(min=-3, max=3, default=0, step=0.1, text='云台 Y', y=0,x=0.2)
+gimbal_z = Slider(min=-1, max=3, default=0, step=0.1, text='云台 Z', y=-0.1,x=0.2)
